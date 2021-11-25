@@ -1,0 +1,560 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.container {
+  background: url(images/background.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  border-bottom: 10px solid rgb(36, 35, 35);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+ 
+}
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0px 100px 250px #000000;
+}
+.top-content {
+  position: relative;
+  height: 90px;
+  z-index: 2;
+}
+.top-content a {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(231, 17, 17);
+  padding: 7px 15px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+.top-content img {
+  width: 140px;
+  height: 35px;
+  position: absolute;
+  top: 40px;
+  left: 130px;
+  transform: translate(-50%, -50%);
+}
+.mid-content {
+  position: relative;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.tabs h1,
+.mid-content h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 50px;
+  margin-top: 100px;
+  color: white;
+}
+.tabs h2,
+.mid-content h2 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  text-transform: capitalize;
+  color: white;
+}
+.tabs p,
+.mid-content p {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+}
+.email-subscription {
+  margin-top: 20px;
+}
+.email-subscription input {
+  height: 60px;
+  width: 450px;
+  /* width: 100%; */
+  text-align: justify;
+  padding-left: 10px;
+  font-size: 20px;
+  outline: none;
+}
+.email-subscription a {
+  height: 60px;
+  width: 200px;
+  /* width: 100%; */
+  background-color: rgba(235, 15, 15, 0.884);
+  padding: 15px 30px 18px 30px;
+  margin-left: -6px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.fas {
+  font-size: 25px;
+  width: 5px;
+  position: relative;
+}
+
+/* tabs */
+.tabs {
+  color: white;
+  background-color: #000000;
+  height: fit-content;
+}
+.first-tab,
+.second-tab,
+.third-tab,
+.fourth-tab {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-bottom: 10px solid rgb(36, 35, 35);
+}
+.first-tab-content {
+  height: 70vh;
+  width: 40vw;
+}
+.first-tab-content p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.second-tab-content {
+  height: 70vh;
+  width: 40vw;
+}
+.second-tab-content p {
+  font-size: 1.5rem;
+  text-align: start;
+  word-spacing: normal;
+}
+.second-tab-content h1 {
+  text-align: start;
+}
+
+.third-tab-content {
+  height: 40vh;
+  width: 35vw;
+  position: relative;
+  top: -50px;
+  left: -300px;
+}
+.third-tab-content p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.fourth-tab-content {
+  height: 70vh;
+  width: 35vw;
+}
+.fourth-tab-content p {
+  font-size: 1.5rem;
+  text-align: start;
+}
+.fourth-tab-content h1 {
+  text-align: start;
+  width: 100%;
+}
+.fourth-tab img {
+  width: 40%;
+}
+
+/* FAQ */
+.FAQ {
+  background-color: #080808;
+  color: white;
+  border-bottom: 10px solid rgb(36, 35, 35);
+}
+.faq-title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 50px;
+  padding-top: 50px;
+  margin-bottom: 40px;
+  color: white;
+}
+.accordion-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.accordion {
+  background-color: #2b2828;
+  font-size: 30px;
+  color: rgb(240, 236, 236);
+  cursor: pointer;
+  padding: 15px;
+  width: 60%;
+  margin: 7px;
+  text-align: left;
+  border: 1px solid grey;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion::after {
+  content: "\02795";
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  font-size: 20px;
+}
+.active::after {
+  content: "\2796";
+  font-size: 20px;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  width: 60%;
+  background-color: #2b2828;
+  color: white;
+  font-size: 25px;
+  padding: 30px;
+}
+.subscription {
+  margin: 60px auto;
+  width: 50%;
+}
+.subscription p {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+footer {
+  background-color: black;
+  color: rgb(110, 109, 109);
+  position: relative;
+  
+}
+.link-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link-content a {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  width: 100%;
+  padding: 10px 60px;
+  color: rgb(94, 92, 92);
+  text-decoration: none;
+}
+footer h3 {
+  font-size: 18px;
+  padding-top: 60px;
+  margin-left: 230px;
+  margin-bottom: 30px;
+}
+footer .last-link a {
+  display: block;
+  padding-top: 40px;
+  margin-left: 230px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  color: grey;
+}
+
+
+
+
+
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  
+  .top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    position: relative;
+  }
+  .top-content img {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+  }
+  .top-content a {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+  }
+  .mid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -300px;
+  }
+  .mid-content h1 {
+    font-size: 30px;
+    width: 100%;
+  }
+  .mid-content h2 {
+    font-size: 20px;
+    width: 100%;
+  }
+  .mid-content p {
+    font-size: 15px;
+    margin-left: 10%;
+  }
+  .email-subscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 10%; */
+    width: 100%;
+  }
+  .email-subscription input {
+    /* padding-left: 0px; */
+    display: block;
+    width: 100%;
+  
+  }
+  .email-subscription a {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 5px;
+    height: 40px;
+  }
+  .fas {
+    font-size: 15px;
+  }
+
+  /* section-2 */
+
+  .first-tab,
+  .second-tab,
+  .third-tab,
+  .fourth-tab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  .first-tab-content {
+    height: 30vh;
+    width: 90vw;
+    margin-top: -50px;
+    margin-bottom: 40px;
+  }
+  .first-tab-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .first-tab-content h1 {
+    font-size: 1.5rem;
+  }
+  .first-tab img {
+    width: 90%;
+    height: 10%;
+    padding: 20px;
+  }
+  .second-tab {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .second-tab-content {
+    height: 40vh;
+    width: 80vw;
+  }
+  .second-tab-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .second-tab-content h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .second-tab img {
+    width: 90%;
+  }
+  .third-tab-content {
+    height: 40vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 560px;
+  }
+  .third-tab-content h1 {
+    font-size: 2rem;
+  }
+  .third-tab-content p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .fourth-tab {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .fourth-tab-content {
+    height: 30vh;
+    width: 100vw;
+  }
+  .fourth-tab-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .fourth-tab-content h1 {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .fourth-tab img {
+    width: 100%;
+  }
+
+  /* accordion */
+  .faq-title {
+    font-size: 2rem;
+  }
+  .accordion {
+    width: 100%;
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .panel {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .subscription {
+    margin: 60px auto;
+    width: 100%;
+  }
+  .link-content a {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 100%;
+    padding: 8px 8px;
+  }
+  footer h3 {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  footer .last-link a {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 769px) {
+  .first-tab-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .first-tab-content h1 {
+    font-size: 1.5rem;
+  }
+  .first-tab img {
+    width: 50%;
+  }
+  .second-tab-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .second-tab-content h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .second-tab img {
+    width: 50%;
+  }
+  .third-tab-content h1 {
+    font-size: 2rem;
+    margin-left: 100px;
+    width: 100%;
+  }
+  .third-tab-content p {
+    font-size: 1.5rem;
+    text-align: start;
+    margin-left: 100px;
+    width: 100%;
+  }
+  .fourth-tab-content p {
+    font-size: 1.5rem;
+    text-align: start;
+  }
+  .fourth-tab-content h1 {
+    font-size: 2rem;
+    margin-top: 100px;
+    text-align: start;
+    width: 100%;
+  }
+  .fourth-tab img {
+    width: 40%;
+  }
+  .faq-title {
+    font-size: 2rem;
+  }
+  .subscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    width: 100%;
+  }
+  .subscription a {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 5px;
+    height: 40px;
+  }
+  .fas {
+    font-size: 1rem;
+  }
+  .accordion {
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+  .panel {
+    width: 80%;
+    font-size: 1.25rem;
+  }
+  footer h3 {
+    font-size: 15px;
+    margin-left: 55px;
+  }
+  footer .last-link a {
+    margin-left: 55px;
+  }
+}
